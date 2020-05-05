@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Health monitoring system</string>
+    <string name="tv_avtor">Комплексная система мониторинга здоровья. Минигулов И.Г.</string>
+    <string name="save">Сохранить</string>
+    <string name="InputError">Введите целое число!</string>
+    <string name="InputError2">Введите дробное или целое число!</string>
+    <string name="bn_save_value_pressure">Запись показателей давления</string>
+    <string name="bn_save_vital_statictics">запись жизненных показателей</string>
+    <string name="tx_age">Возраст</string>
+    <string name="tx_fio">ФИО</string>
+    <string name="string_date">Дата и время</string>
+    <string name="string_tachycardia">Тахикардия</string>
+    <string name="string_pulse">Пульс</string>
+    <string name="string_top_pressure">Верхнее давление</string>
+    <string name="string_lower_pressure">Нижнее давление</string>
+</resources>
