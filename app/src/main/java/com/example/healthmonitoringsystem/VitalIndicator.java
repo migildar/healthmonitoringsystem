@@ -24,4 +24,12 @@ public class VitalIndicator {
     public void setNumbersofSteps(int numbersofSteps) {
         this.numbersOfSteps = numbersofSteps;
     }
+
+    @Override
+    public String toString() {
+        return "VitalIndicator{" +
+                "weight=" + weight +
+                ", numbersOfSteps=" + numbersOfSteps +
+                '}';
+    }
 }

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main3Activity">
+    tools:context=".VitalActivity">
 
     <EditText
-        android:id="@+id/et_weight"
+        android:id="@+id/weightEt"
         android:layout_width="282dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.293" />
 
     <EditText
-        android:id="@+id/et_quantity_steps"
+        android:id="@+id/quantityStepsEt"
         android:layout_width="282dp"
         android:layout_height="44dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/bt_save"
+        android:id="@+id/saveBt"
         android:layout_width="165dp"
         android:layout_height="51dp"
         android:text="Сохранить"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.807" />
 
     <TextView
-        android:id="@+id/tv_weight"
+        android:id="@+id/weightTv"
         android:layout_width="101dp"
         android:layout_height="23dp"
         android:text="Вес"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.223" />
 
     <TextView
-        android:id="@+id/tv_quantity_steps"
+        android:id="@+id/quantityStepsTv"
         android:layout_width="160dp"
         android:layout_height="25dp"
         android:text="Количество шагов"

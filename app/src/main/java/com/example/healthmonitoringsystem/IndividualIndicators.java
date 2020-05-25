@@ -56,4 +56,15 @@ public class IndividualIndicators {
     public void setDateofmeasurement(Date dateofmeasurement) {
         this.date = dateofmeasurement;
     }
+
+    @Override
+    public String toString() {
+        return "IndividualIndicators{" +
+                "topPressure=" + topPressure +
+                ", lowerPressure=" + lowerPressure +
+                ", pulse=" + pulse +
+                ", tachycardia=" + tachycardia +
+                ", date=" + date +
+                '}';
+    }
 }

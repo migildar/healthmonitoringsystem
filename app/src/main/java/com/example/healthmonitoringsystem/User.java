@@ -1,20 +1,20 @@
 package com.example.healthmonitoringsystem;
 
 public class User {
-    private String FIO;
+    private String name;
     private int age;
 
-    public User(String FIO, int age) {
-        this.FIO = FIO;
+    public User(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 
-    public String getFIO() {
-        return FIO;
+    public String getName() {
+        return name;
     }
 
-    public void setFIO(String FIO) {
-        this.FIO = FIO;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -28,7 +28,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "FIO='" + FIO + '\'' +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
     }

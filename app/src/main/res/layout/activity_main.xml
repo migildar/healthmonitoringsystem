@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PersonActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -30,8 +30,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_fio"
-        android:layout_width="282dp"
+        android:id="@+id/nameEt"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -43,9 +43,9 @@
         app:layout_constraintVertical_bias="0.349" />
 
     <EditText
-        android:id="@+id/et_age"
-        android:layout_width="283dp"
-        android:layout_height="52dp"
+        android:id="@+id/ageEt"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,10 +53,10 @@
         app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <Button
-        android:id="@+id/bt_save"
+        android:id="@+id/saveBtn"
         android:layout_width="172dp"
         android:layout_height="54dp"
         android:text="@string/save"
@@ -64,13 +64,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_age"
+        app:layout_constraintTop_toBottomOf="@+id/ageEt"
         app:layout_constraintVertical_bias="0.173" />
 
     <TextView
-        android:id="@+id/tv_fio"
-        android:layout_width="122dp"
-        android:layout_height="28dp"
+        android:id="@+id/fioTv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="0dp"
         android:text="@string/tx_fio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,19 +81,20 @@
         app:layout_constraintVertical_bias="0.277" />
 
     <TextView
-        android:id="@+id/tv_age"
-        android:layout_width="118dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="4dp"
+        android:id="@+id/ageTv"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="0dp"
         android:text="@string/tx_age"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
 
     <Button
-        android:id="@+id/id_save_value_pressure"
+        android:id="@+id/saveValuePressureBtn"
         android:layout_width="300dp"
         android:layout_height="42dp"
         android:text="@string/bn_save_value_pressure"
@@ -104,7 +106,7 @@
         app:layout_constraintVertical_bias="0.868" />
 
     <Button
-        android:id="@+id/id_save_vital_statistics"
+        android:id="@+id/saveVitalStatisticsBtn"
         android:layout_width="303dp"
         android:layout_height="40dp"
         android:text="@string/bn_save_vital_statictics"

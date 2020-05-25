@@ -12,11 +12,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_save_value_pressure;
-    private Button btn_save_vital_statistics;
-    private Button btn_save;
-    private EditText et_fio;
-    private EditText et_age;
+    private Button saveValuePressureBtn;
+    private Button saveVitalStatisticsBtn;
+    private Button saveBtn;
+    private EditText nameEt;
+    private EditText ageEt;
     private User user;
     private static final String TAG = "MyApp";
 
@@ -28,40 +28,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        btn_save = findViewById(R.id.bt_save);
-        et_fio = findViewById(R.id.et_fio);
-        et_age = findViewById(R.id.et_age);
-        btn_save_value_pressure = findViewById(R.id.id_save_value_pressure);
-        btn_save_vital_statistics = findViewById(R.id.id_save_vital_statistics);
+        saveBtn = findViewById(R.id.saveBtn);
+        nameEt = findViewById(R.id.nameEt);
+        ageEt = findViewById(R.id.ageEt);
+        saveValuePressureBtn = findViewById(R.id.saveValuePressureBtn);
+        saveVitalStatisticsBtn = findViewById(R.id.saveVitalStatisticsBtn);
 
-        btn_save.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Пользователь нажал кнопку сохранить");
-                String string_age = et_age.getText().toString();
+                String nameStr = nameEt.getText().toString();
+                String ageStr = ageEt.getText().toString();
+
+                if (nameStr.equals("")) {
+                    Toast.makeText(MainActivity.this, "Введите ФИО пользователя!", Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Пользователь ввел не корректные данные");
+                    return;
+                }
+
                 try {
-                    user = new User(et_fio.getText().toString(), Integer.parseInt(string_age));
+                    user = new User(nameStr, Integer.parseInt(ageStr));
                     Toast.makeText(MainActivity.this, user.toString(), Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
-                    Toast.makeText(MainActivity.this, R.string.InputError,
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Введите целое число!", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Пользователь ввел не корректные данные");
                 }
             }
         });
 
-        btn_save_value_pressure.setOnClickListener(new View.OnClickListener() {
+        saveValuePressureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                Intent intent = new Intent(getApplicationContext(), IndividualActivity.class);
                 startActivity(intent);
             }
         });
 
-        btn_save_vital_statistics.setOnClickListener(new View.OnClickListener() {
+        saveVitalStatisticsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main3Activity.class);
+                Intent intent = new Intent(getApplicationContext(), VitalActivity.class);
                 startActivity(intent);
             }
         });

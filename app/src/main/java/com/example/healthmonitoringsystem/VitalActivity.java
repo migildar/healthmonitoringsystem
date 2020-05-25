@@ -12,11 +12,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main3Activity extends AppCompatActivity {
+public class VitalActivity extends AppCompatActivity {
 
-    private Button btn_save;
-    private EditText et_weight;
-    private EditText et_quantity_steps;
+    private Button saveBtn;
+    private EditText weightValue;
+    private EditText quantitySteps;
     private List<VitalIndicator> indicators = new ArrayList<>();
     private static final String TAG = "MyApp";
 
@@ -28,20 +28,21 @@ public class Main3Activity extends AppCompatActivity {
     }
 
     private void init() {
-        btn_save = findViewById(R.id.bt_save);
-        et_weight = findViewById(R.id.et_weight);
-        et_quantity_steps = findViewById(R.id.et_quantity_steps);
+        saveBtn = findViewById(R.id.saveBt);
+        weightValue = findViewById(R.id.weightEt);
+        quantitySteps = findViewById(R.id.quantityStepsEt);
 
-        btn_save.setOnClickListener(new View.OnClickListener() {
+        saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Пользователь нажал кнопку сохранить");
                 try {
-                    double weight = Double.parseDouble(et_weight.getText().toString());
-                    int steps = Integer.parseInt(et_quantity_steps.getText().toString());
+                    double weight = Double.parseDouble(weightValue.getText().toString());
+                    int steps = Integer.parseInt(quantitySteps.getText().toString());
                     indicators.add(new VitalIndicator(weight, steps));
+                    Toast.makeText(VitalActivity.this, indicators.toString(), Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
-                    Toast.makeText(Main3Activity.this, R.string.InputError2,
+                    Toast.makeText(VitalActivity.this, R.string.InputError2,
                             Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Пользователь ввел не корректные данные");
                 }
