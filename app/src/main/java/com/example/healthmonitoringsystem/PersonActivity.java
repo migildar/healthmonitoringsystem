@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class PersonActivity extends AppCompatActivity {
 
     private Button saveValuePressureBtn;
     private Button saveVitalStatisticsBtn;
@@ -41,17 +41,17 @@ public class MainActivity extends AppCompatActivity {
                 String nameStr = nameEt.getText().toString();
                 String ageStr = ageEt.getText().toString();
 
-                if (nameStr.equals("")) {
-                    Toast.makeText(MainActivity.this, "Введите ФИО пользователя!", Toast.LENGTH_LONG).show();
-                    Log.e(TAG, "Пользователь ввел не корректные данные");
-                    return;
-                }
-
                 try {
+                    if (nameStr.equals("")) {
+                        throw new RuntimeException("Введите ФИО пользователя!");
+                    }
                     user = new User(nameStr, Integer.parseInt(ageStr));
-                    Toast.makeText(MainActivity.this, user.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(PersonActivity.this, user.toString(), Toast.LENGTH_LONG).show();
+                } catch (RuntimeException ex) {
+                    Toast.makeText(PersonActivity.this, ex.getMessage(), Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Пользователь ввел не корректные данные");
                 } catch (Exception ex) {
-                    Toast.makeText(MainActivity.this, "Введите целое число!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PersonActivity.this, "Введите целое число!", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "Пользователь ввел не корректные данные");
                 }
             }
